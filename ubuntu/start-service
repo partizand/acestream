@@ -10,4 +10,4 @@ rm ${INSTALL_DIR}/acestream.log
 
 #mkdir $EGG_CACHE;
 #PYTHON_EGG_CACHE=$EGG_CACHE;
-LD_LIBRARY_PATH=${INSTALL_DIR}/lib ${INSTALL_DIR}/acestreamengine --lib-path ${INSTALL_DIR} --client-console --pid-file-dir /opt/acestream --log-file /opt/acestream/acestream.log --cache-dir /opt/acestream/.cACEStream --state-dir /opt/acestream/.sACEStream --access-token 69696969 --core-sandbox-max-peers 5 --live-buffer 10 -stats-report-peers --port 9944
+LD_LIBRARY_PATH=${INSTALL_DIR}/lib ${INSTALL_DIR}/acestreamengine --lib-path ${INSTALL_DIR} --client-console --pid-file-dir /opt/acestream --cache-dir /opt/acestream/.cACEStream --state-dir /opt/acestream/.sACEStream --access-token 69696969 --core-sandbox-max-peers 5 --live-buffer 10 -stats-report-peers --port 9944
