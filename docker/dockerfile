@@ -1,0 +1,36 @@
+# Set base to Debian jessie
+FROM debian:jessie-slim
+
+ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /tmp
+
+# install base packages
+RUN apt-get update -y && \
+    apt-get install -y \
+    libpython2.7 \
+    python-apsw \
+    python-setuptools \
+    net-tools \
+#   libxslt1.1 \
+    sudo \
+    python-m2crypto && \
+    apt-get install -y --no-install-recommends  wget && \
+# install acestream-engine
+    wget  -o - http://dl.acestream.org/linux/acestream_3.1.16_debian_8.7_x86_64.tar.gz && \
+    tar --show-transformed-names --transform='s/acestream_3.1.16_debian_8.7_x86_64/acestream/' -vzxf acestream_3.1.16_debian_8.7_x86_64.tar.gz && \
+    mv acestream /opt && \
+    rm -rf /tmp/* && \
+# remove packages
+    apt-get remove -y wget && \
+    apt-get clean -y && \
+    sudo apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+
+# run script
+ADD start.sh /opt/acestream/start.sh
+RUN chmod +x /opt/acestream/start.sh
+
+# 6878 - ace internal http proxy
+EXPOSE 6878
+
+ENTRYPOINT ["/opt/acestream/start.sh"]
