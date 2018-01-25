@@ -5,19 +5,13 @@ Install acestream engine on Ubuntu 16.04
 
 * Loads binaries from official site
 * Install dependies
-* Create system user and group acestream
-* Create and start systemd service
-
+* Create system user and group `acestream`
+* Create and start systemd service `acestream`
 
 Install
 -------
 
-Copy files into dir, then
-
-```
-cd /path/to/install_dir
-./ace-install.sh
-```
+Copy files into dir, then run `ace-install.sh`
 
 Commands
 --------

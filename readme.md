@@ -1,7 +1,11 @@
 acestream
 =========
 
-Разные варианты установки acestream engine
+Разные варианты установки [acestream engine](http://www.acestream.org/)
 
-ubuntu - скрипт установки на ubuntu
-docker - acestream в docker
+ubuntu - Install script acestream on Ubuntu
+
+docker - acestream in docker
+
+
+
