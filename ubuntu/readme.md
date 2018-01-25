@@ -1,5 +1,35 @@
-Запуск acestream без docker
-===========================
+Install script acestream on Ubuntu
+==================================
+
+Install acestream engine on Ubuntu 16.04
+
+* Loads binaries from official site
+* Install dependies
+* Create system user and group acestream
+* Create and start systemd service
+
+
+Install
+-------
+
+Copy files into dir, then
+
+```
+cd /path/to/install_dir
+./ace-install.sh
+```
+
+Commands
+--------
+
+Stop `sudo systemctl stop acestream`
+
+Start `sudo systemctl start acestream`
+
+Status `sudo systemctl status acestream`
+
+View log `sudo journalctl -u acestream`
+
 
 Готовые варианты
 ----------------
