@@ -27,6 +27,7 @@ sudo adduser --system --no-create-home --shell /bin/false --group acestream;
 wget  -o - http://dl.acestream.org/linux/${ACE_ARH_FILE} ;
 sudo mkdir -p ${INSTALL_DIR}
 sudo tar -C ${INSTALL_DIR} --strip=1 -vxf ${ACE_ARH_FILE};
+rm ./${ACE_ARH_FILE}
 
 # dir rights
 sudo chown acestream:acestream ${INSTALL_DIR}
@@ -35,7 +36,8 @@ sudo chown -R acestream:acestream ${INSTALL_DIR}/*
 # add service
 
 #sudo cp --update ./acestream.service /lib/systemd/system;
-sed "s=/opt/acestream=${INSTALL_DIR}=" ./acestream.service > /lib/systemd/system/acestream.service;
+sed "s=/opt/acestream=${INSTALL_DIR}=" ./acestream.service > ./new-acestream.service;
+sudo mv ./new-acestream.service /lib/systemd/system/acestream.service;
 sudo cp --update ./start-service ${INSTALL_DIR};
 sudo chmod +x ${INSTALL_DIR}/start-service
 
