@@ -1,13 +1,13 @@
 #!/bin/sh
 
 INSTALL_DIR=$(readlink -f $(dirname $0));
-ROOT=$(readlink -f $(dirname $0));
-env PYTHON_EGG_CACHE="$INSTALL_DIR/.eggcache";
+#ROOT=$(readlink -f $(dirname $0));
+env PYTHON_EGG_CACHE="${INSTALL_DIR}/.eggcache";
 
-rm $INSTALL_DIR/acestream.log
+rm ${INSTALL_DIR}/acestream.log
 
 #LD_LIBRARY_PATH=${ROOT}/lib ${ROOT}/acestreamengine --lib-path $ROOT "$@"
 
 #mkdir $EGG_CACHE;
 #PYTHON_EGG_CACHE=$EGG_CACHE;
-LD_LIBRARY_PATH=${ROOT}/lib ${ROOT}/acestreamengine --lib-path $ROOT --client-console --pid-file-dir /opt/acestream --log-file /opt/acestream/acestream.log --cache-dir /opt/acestream/.cACEStream --state-dir /opt/acestream/.sACEStream --access-token 69696969 --core-sandbox-max-peers 5 --live-buffer 10 -stats-report-peers --port 9944
+LD_LIBRARY_PATH=${INSTALL_DIR}/lib ${INSTALL_DIR}/acestreamengine --lib-path ${INSTALL_DIR} --client-console --pid-file-dir /opt/acestream --log-file /opt/acestream/acestream.log --cache-dir /opt/acestream/.cACEStream --state-dir /opt/acestream/.sACEStream --access-token 69696969 --core-sandbox-max-peers 5 --live-buffer 10 -stats-report-peers --port 9944
