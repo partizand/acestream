@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Run acestream engine in client console mode as system user
+
+INSTALL_DIR=$(readlink -f $(dirname $0));
+#HOME_DIR=/tmp/Acestream
+#env PYTHON_EGG_CACHE="${INSTALL_DIR}/.eggcache";
+#env PYTHON_EGG_CACHE="tmp/.eggcacheace";
+export PYTHON_EGG_CACHE="tmp/.eggcacheace";
+#mkdir -p ${HOME_DIR}
+#env HOME=${HOME_DIR}
+#LD_LIBRARY_PATH=${INSTALL_DIR}/lib ${INSTALL_DIR}/acestreamengine --lib-path ${INSTALL_DIR} --client-console --cache-dir /tmp/acestream/.cache --state-dir /opt/acestream/.state
+LD_LIBRARY_PATH=${INSTALL_DIR}/lib ${INSTALL_DIR}/acestreamengine --lib-path ${INSTALL_DIR} --client-console --cache-dir /tmp/acestream/.cache --state-dir /tmp/acestream/.state
+
+#LD_LIBRARY_PATH=${INSTALL_DIR}/lib ${INSTALL_DIR}/acestreamengine --lib-path ${INSTALL_DIR} --client-console

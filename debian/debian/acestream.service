@@ -1,0 +1,17 @@
+[Unit]
+Description=AceStream Engine
+After=network.target
+
+[Service]
+Type=simple
+Environment="PYTHON_EGG_CACHE=tmp/.eggcacheace"
+
+User=acestream
+Group=acestream
+
+DynamicUser=yes
+
+ExecStart=/opt/acestream/start-service
+
+[Install]
+WantedBy=multi-user.target 

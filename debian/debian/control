@@ -1,0 +1,14 @@
+Source: acestream
+Section: misc
+Priority: optional
+Maintainer: Partizand <partizand@gmail.com>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.1.3
+
+
+Package: acestream
+Architecture: any
+Depends: python-setuptools,python-m2crypto,python-apsw,${shlibs:Depends}, ${misc:Depends}
+Description: Acestream engine
+ Add systemd service acestream. Add user and group acestream.
+ http://acestream.org
