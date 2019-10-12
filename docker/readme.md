@@ -1,6 +1,43 @@
 docker acestream debian
 =======================
 
+* Try create minimal image size for acestream
+* Don't contain aceproxy and supervisord
+* May be outdate.
+
+Install
+-------
+
+
+Get docker
+
+```
+git clone https://github.com/partizand/acestream.git
+cd acestream/docker
+```
+
+Build docker image "acestream-deb"
+
+```
+docker build --no-cache -t acestream-deb .
+```
+
+Create docker container "acestream" (with restart after reboot and reload on error)
+
+```bash
+docker create -p 6878:6878 --restart unless-stopped --name acestream acestream-deb
+```
+
+Start docker container
+
+```bash
+docker start acestream
+```
+
+Описание
+--------
+
+
 Образ docker для движка acestream в debian
 
 Основные цели
