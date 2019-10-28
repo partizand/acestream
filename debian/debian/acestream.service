@@ -4,14 +4,13 @@ After=network.target
 
 [Service]
 Type=simple
-Environment="PYTHON_EGG_CACHE=tmp/.eggcacheace"
-
-User=acestream
-Group=acestream
+Environment="PYTHON_EGG_CACHE=/tmp/acestream/eggcache"
+Environment="LD_LIBRARY_PATH=/opt/acestream/lib"
 
 DynamicUser=yes
 
-ExecStart=/opt/acestream/start-service
+WorkingDirectory=/opt/acestream/
+ExecStart=/opt/acestream/acestreamengine --lib-path /opt/acestream --client-console @/opt/acestream/ace-user.conf
 
 [Install]
 WantedBy=multi-user.target 

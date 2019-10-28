@@ -1,3 +1,10 @@
+acestream (3.1.49-2) unstable; urgency=medium
+
+  * Cache in memory. 
+  * Add ace-user.conf file for manual tunning
+
+ -- Partizand <partizand@gmail.com>  Mon, 28 Oct 2019 18:58:30 +0400
+
 acestream (3.1.49-1) unstable; urgency=medium
 
   * Initial Release.

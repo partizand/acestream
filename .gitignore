@@ -1,3 +1,4 @@
 debian/debian/.debhelper 
 debian/debian/acestream/
 debian/debian/source/
+*.deb
